@@ -1,0 +1,14 @@
+[Unit]
+Description=TG Poster Bot Service
+After=network.target
+
+[Service]
+User=your_username
+Group=your_group
+WorkingDirectory=/path/to/tg_poster_ubuntu
+Environment="PATH=/path/to/tg_poster_ubuntu/venv/bin"
+ExecStart=/path/to/tg_poster_ubuntu/venv/bin/python /path/to/tg_poster_ubuntu/main.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

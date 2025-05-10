@@ -1,0 +1,14 @@
+[Unit]
+Description=TG Poster API Service
+After=network.target
+
+[Service]
+User=your_username
+Group=your_group
+WorkingDirectory=/path/to/tg_poster_ubuntu
+Environment="PATH=/path/to/tg_poster_ubuntu/venv/bin"
+ExecStart=/path/to/tg_poster_ubuntu/venv/bin/uvicorn app.api.main:app --host 0.0.0.0 --port 8002
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
